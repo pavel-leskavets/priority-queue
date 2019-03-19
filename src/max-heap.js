@@ -40,6 +40,9 @@ class MaxHeap {
 	}
 
 	insertNode(node) {
+		if(this.parentNodes.length == 0) {
+			this.root = node;
+		}
 		
 	}
 
