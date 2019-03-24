@@ -7,7 +7,8 @@ class Node {
 		this.right = null;
 	}
 
-	appendChild(node) {
+	appendChild(node) {		
+		node.parent = this;	
 		if(this.left == null) {
 			this.left = node;
 		}
@@ -17,7 +18,8 @@ class Node {
 
 	}
 
-	removeChild(node) {
+	removeChild(node) {	
+		this.left.parent = null;
 		if(this.left == node) {
 			this.left = null;
 		}
@@ -26,14 +28,16 @@ class Node {
 		}
 		else if(node != this.left || node != this.right) {
 			throw new Error;
+			
 		}
 		
-
-
+				
+		
 	}
 
 	remove() {
-
+		if (this.parent != null)
+		this.parent.removeChild(this);
 	}
 
 	swapWithParent() {

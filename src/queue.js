@@ -4,26 +4,30 @@ class PriorityQueue {
 	constructor(maxSize) {
 		this.maxSize = maxSize || 30;
 		this.heap = new MaxHeap;
+		this.length = 0;
+		this.head = null;
+		this.tail = null;
+		this.length = 0;
+		
 
 	}
 
 	push(data, priority) {
+		
 
 	}
 
 	shift() {
-
+		
 	}
 
 	size() {
-		return heap.length
+		return this.length;
 
 	}
 
 	isEmpty() {
-		if(size() == 0) {
-			return true
-		}
+		return this.length === 0;
 	}
 }
 
